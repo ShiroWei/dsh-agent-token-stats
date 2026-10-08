@@ -9,7 +9,8 @@ Aggregates local conversation logs from **Claude Code, WPS Claude, OpenCode, DSH
 ## Install
 
 ```sh
-dsh plugin --profile web add github:skyzhao1223/dsh-agent-token-stats
+dsh plugin --profile web add dsh-agent-token-stats   # from npm
+# or: dsh plugin --profile web add github:skyzhao1223/dsh-agent-token-stats
 # then restart: dsh web
 ```
 
