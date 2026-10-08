@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.3 (2026-10-08)
+
+### Fixed
+- **Shell compat shim actually awaits**: `shell.execute(spec)` resolves to a live `ShellExecution` handle; v1.1.1 tested `.result` on the still-pending promise, fell through, and read the handle's in-flight `exitCode: null` as a failure ("shell exited with code null"). Every command succeeded all along. The shim now awaits the promise, then awaits `result()` for the foreground ShellRunResult.
+
 ## v1.1.2 (2026-10-08)
 
 ### Fixed
