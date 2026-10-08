@@ -1,6 +1,6 @@
 {
   "name": "dsh-agent-token-stats",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Cross-agent local LLM token usage dashboard for the DSH web GUI: scans Claude Code / OpenCode / Cursor IDE / DSH / OpenClaw / QClaw / CodeWhale / WorkBuddy / WPS Claude / Hermes logs (plus Codex/Gemini/Cline/Pi parsers on standby), keeps a persistent ratchet ledger in ~/.agent-token-stats, and serves a sidebar analytics panel with cache-hit rate, cost estimation, period comparison, day drill-down and CSV export.",
   "type": "module",
   "main": "lib/index.js",

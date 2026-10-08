@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.2 (2026-10-08)
+
+### Fixed
+- **DSH 0.2.0 sandbox policy for plugin shell calls**: agentless calls now default to the composition's `sandbox-policy` row (`workspace-write` at the server cwd), which denied ledger writes under `~/.agent-token-stats` and confined every log scan through seatbelt. All shell requests now carry an explicit `danger-full-access` policy (the plugin's function is machine-wide log reading plus its own data dir), with a bare-resolve fallback for 0.1.x hosts.
+
+### Improved
+- Shell failures now report full classification (exit code, signal, timedOut, aborted, effective timeout, sandbox facts, stderr excerpt, command prefix) instead of a bare exit code.
+- Signature scan retries once, then degrades to full collection: one broken scan can no longer 500 the whole dashboard (collectors were already guarded).
+
 ## v1.1.1 (2026-10-08)
 
 ### Fixed
