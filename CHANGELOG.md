@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.1 (2026-10-08)
+
+### Fixed
+- **DSH 0.2.0 host compatibility**: the shell service renamed `run(spec)` to `execute(spec)` (returning a live handle settled via `result()`). All three call sites now go through a `shellStart()` shim supporting both API generations, so the bundle runs on 0.1.x and 0.2.x hosts.
+
 ## v1.1.0 (2026-09-22)
 
 ### Fixed
