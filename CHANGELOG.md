@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.4 (2026-10-08)
+
+### Fixed
+- **Panel-wide white-screen crash**: the i18n translation function was named `t`, which several render scopes already bind as a local (worst case `periodCard(title, t, …)` where `t` is the period totals object). With real data rendered, `t('kNN')` hit the non-function local → TypeError → React unmounted the whole tree. Translation functions renamed to `TR`/`TRS` (collision-free); verified headlessly across all six tabs with live data, zero console errors.
+- **EN toggle did not repaint**: `LANG` was synced in a post-render effect, so the first re-render still read the old language. The toggle now assigns `LANG`/`uiCache.lang` synchronously before `setLang`; verified Overview→Trends→…→Sources flip instantly and flip back.
+
 ## v1.1.3 (2026-10-08)
 
 ### Fixed
