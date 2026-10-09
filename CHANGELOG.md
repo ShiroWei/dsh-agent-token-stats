@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.5 (2026-10-09)
+
+### Changed
+- **Model totals merge across agents by default**: the Top-Models chart, model detail table and weekly/monthly report Top-10 now aggregate by vendor+model instead of agent+model ("how much did I use qwen3.8-max in total" gets one answer). A "跨 Agent 合并 / Merge across agents" toggle (detail tab + overview Top Models) restores the per-agent split; merged rows show contributing agents (e.g. `DSH+OpenCode`, full list on hover) and expand to a per-agent breakdown table (requests / total / hit rate / cost) above the daily trend. Daily trends of merged rows aggregate per day across agents and providers.
+
 ## v1.1.4 (2026-10-08)
 
 ### Fixed
